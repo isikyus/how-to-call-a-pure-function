@@ -9,6 +9,9 @@ import Platform.Cmd as Cmd
 import Platform.Sub as Sub
 import Task
 
+-- Needed to define port modules, apparently.
+import Json.Decode
+
 
 main : Program Never Model Msg
 main =
