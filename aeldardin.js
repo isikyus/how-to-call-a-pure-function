@@ -17,8 +17,13 @@ function (testFunc) {
       console.log('From Elm ' + value);
     });
 
-    var message = 'Hi';
+    var message = 'Hi!';
     console.log('Before sending message: ' + message);
+
     worker.ports.test.send(message);
-    console.log('After sending message: ' + message);
+    console.log('After sending 1st message: ' + message);
+
+    message = 'Lo!';
+    worker.ports.test.send(message);
+    console.log('After sending 2nd message: ' + message);
 });
