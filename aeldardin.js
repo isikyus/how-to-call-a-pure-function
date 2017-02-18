@@ -11,5 +11,14 @@ requirejs([
   ],
 function (testFunc) {
 
-  debugger;
+    var worker = testFunc.Test.worker();
+
+    worker.ports.done.subscribe(function(value) {
+      console.log('From Elm ' + value);
+    });
+
+    var message = 'Hi';
+    console.log('Before sending message: ' + message);
+    worker.ports.test.send(message);
+    console.log('After sending message: ' + message);
 });
