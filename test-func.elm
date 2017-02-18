@@ -3,6 +3,7 @@ port module Test exposing (..)
 -- Elm module to get a sense of how to call Elm from JS
 -- Very roughly based on https://gist.github.com/evancz/e69723b23958e69b63d5b5502b0edf90
 
+import Json.Decode
 import String
 
 init : ( Model, Cmd Msg )
