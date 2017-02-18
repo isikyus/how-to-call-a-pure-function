@@ -40,10 +40,10 @@ update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
     Test newText ->
-      ( Model newText, Cmd.none )
+      ( Model newText, done (model.text ++ "a") )
 
     Done ->
-      ( model, done (model.text ++ "a") )
+      ( model, Cmd.none )
 
 -- SUBSCRIPTIONS
 
